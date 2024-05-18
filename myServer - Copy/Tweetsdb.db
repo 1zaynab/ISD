@@ -1,0 +1,36 @@
+CREATE TABLE Tweets (
+    t_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name VARCHAR,
+    Username VARCHAR,
+    Timestamp DATETIME,
+    Verified BOOLEAN DEFAULT FALSE,
+    Content VARCHAR,
+    Comments VARCHAR,
+    Retweets VARCHAR,
+    Likes VARCHAR,
+    Analytics VARCHAR,
+    Tags VARCHAR,
+    Mentions VARCHAR,
+    Emojis VARCHAR,
+    "Profile Image" VARCHAR,
+    "Tweet Link" VARCHAR,
+    "Tweet Image" VARCHAR
+);
+CREATE TABLE Hashtags (
+    h_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Username VARCHAR,
+    Content VARCHAR,
+    "Tweet Image" VARCHAR
+);
+CREATE TABLE Tag (
+    tag_ID INTEGER PRIMARY KEY,
+    t_ID INTEGER,
+    h_ID INTEGER,
+    FOREIGN KEY (t_ID) REFERENCES Tweets(t_ID),
+    FOREIGN KEY (h_ID) REFERENCES Hashtags(h_ID)
+);
+CREATE TABLE Community (
+    c_ID INTEGER PRIMARY KEY AUTOINCREMENT,
+    Name VARCHAR,
+    Username VARCHAR
+);

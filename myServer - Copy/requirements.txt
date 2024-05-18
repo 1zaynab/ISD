@@ -1,0 +1,6 @@
+Flask==2.0.1
+Flask-SQLAlchemy==2.5.1
+pyodbc==4.0.30
+
+
+#pip install -r requirements.txt
